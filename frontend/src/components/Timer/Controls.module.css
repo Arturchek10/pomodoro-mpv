@@ -1,0 +1,36 @@
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px; 
+  gap: 10px;
+}
+
+.btn {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.75);
+  border: solid 3px black;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn.start:hover{
+  color: white;
+  background: rgba(0, 0, 0, 0.7);
+} 
+
+.btn:hover{
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.start {
+  width: 200px;
+  height: 60px;
+  font-size: 38px;
+  font-weight: 600;
+}
+
+.reset{
+  width: 60px;
+  height: 60px;
+}

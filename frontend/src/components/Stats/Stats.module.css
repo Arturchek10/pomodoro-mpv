@@ -1,0 +1,22 @@
+.stats-container{
+  display: flex;
+  /* position: absolute; */
+  flex-direction: column;
+  gap: 2px;
+  color: #e6e6e6;
+  width: fit-content;
+  height: fit-content;
+  padding: 10px;
+  cursor: pointer;
+}
+.stats-container p:hover{
+  color: #ffffff;
+}
+
+#reset-stats{
+  color: #e6e6e6d7;
+  transition: all 0.3s ease;
+}
+#reset-stats:hover{
+  color: #ffffff;
+}

@@ -1,0 +1,10 @@
+
+.carousel-container{
+  display: flex;
+  flex-direction: row;
+  width: 500px;
+  height: 500px;
+  justify-content: center;
+  gap: 1px;
+  margin: auto;
+}
