@@ -2,7 +2,7 @@
 
 import styles from "./Stats.module.css";
 import useSessions from "@/stores/useSessionStore.store";
-
+import EnableMusicBtn from "../EnableMusicBtn/EnableMusicBtn";
 export default function Stats() {
   const { sessions, breaks, resetStats } = useSessions();
 
@@ -13,6 +13,7 @@ export default function Stats() {
       <p id={styles["reset-stats"]} onClick={resetStats}>
         click here for reset stats
       </p>
+      <EnableMusicBtn />
     </div>
   );
 }

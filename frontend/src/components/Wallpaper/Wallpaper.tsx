@@ -2,8 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import styles from "./Wallpaper.module.css";
-import { VIDEOS } from "@/constants/theme.constants";
+import { VIDEOS, AUDIO } from "@/constants/theme.constants";
 import useThemesStore from "@/stores/useThemesStore.store";
+import useSoundStore from "@/stores/useSoundStore.store";
 
 export default function Wallpaper() {
   const currentThemeKey = useThemesStore((state) => state.activeTheme);
@@ -14,6 +15,35 @@ export default function Wallpaper() {
   // номер фона который щас виден
   const [activeVideo, setActiveVideo] = useState<1 | 2>(1);
   const [currentSrc, setCurrentSrc] = useState(VIDEOS[currentThemeKey]);
+
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  //
+  const soundState = useSoundStore((state) => state.isSoundEnable);
+
+  useEffect(() => {
+    audioRef.current = new Audio(AUDIO[currentThemeKey]);
+
+    audioRef.current.loop = true;
+    audioRef.current.volume = 0.15;
+  }, [currentThemeKey]);
+
+  useEffect(() => {
+    console.log("effect запустился");
+
+    if (!audioRef.current) return;
+
+    if (soundState === true) {
+      // пока пользователь не повзаимодействовал с сайтом браузер отклоняет вызов play()
+      audioRef.current.play().catch(console.error);
+    } else {
+      audioRef.current.pause();
+    }
+    return () => {
+      audioRef.current?.pause();
+      console.log("bye");
+    };
+  }, [currentThemeKey, soundState]);
 
   useEffect(() => {
     if (video1Ref.current) {
@@ -34,7 +64,6 @@ export default function Wallpaper() {
     const nextVideo =
       nextVideoNumber === 1 ? video1Ref.current : video2Ref.current;
 
-    
     if (!nextVideo) return;
 
     nextVideo.src = newSrc;

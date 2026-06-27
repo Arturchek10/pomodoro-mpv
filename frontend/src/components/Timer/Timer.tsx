@@ -3,6 +3,7 @@
 import styles from "./Timer.module.css";
 import Controls from "./Controls";
 import { usePomodoroTimer } from "./usePomodoroTimer";
+import ShinyText from "@/components/ui/ShinyText/ShinyText";
 
 export default function Timer() {
   const {
@@ -26,7 +27,19 @@ export default function Timer() {
   return (
     <div className={styles["timer-controls-container"]}>
       <h1 className={styles["timer-title"]}>
-        Pomodoro Timer{" "}
+        {/* Pomodoro Timer */}
+        <ShinyText
+          text="Pomodoro Timer"
+          speed={6}
+          delay={0}
+          color="#c1c1c1"
+          shineColor="#FFFFFF"
+          spread={120}
+          direction="left"
+          yoyo={false}
+          pauseOnHover={false}
+          disabled={false}
+        />
         <a href="https://github.com/Arturchek10" target="_blank">
           by Arturchek10
         </a>

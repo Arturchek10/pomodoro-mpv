@@ -1,23 +1,35 @@
-export const THEMES = ["classroom", 'deathnote', "harrypotter", "strangerthings"] as const;
-export type ThemeKey = typeof THEMES[number] // тип любого элемента массива
+export const THEMES = [
+  "classroom",
+  "deathnote",
+  "harrypotter",
+  "strangerthings",
+] as const;
+export type ThemeKey = (typeof THEMES)[number]; // тип любого элемента массива
 
 export const VIDEOS: Record<ThemeKey, string> = {
   classroom: "videos/Classroom-wallpaper+.mp4",
   deathnote: "videos/Death-Note-wallpaper+.mp4",
-  harrypotter:  "videos/Harry-Potter-wallpaper+.mp4",
+  harrypotter: "videos/Harry-Potter-wallpaper+.mp4",
   strangerthings: "videos/Stranger-Things-wallpaper+.mp4",
-}
+};
+
+export const AUDIO: Record<ThemeKey, string> = {
+  classroom: "audio/Study-With-Me-in-Class.m4a",
+  deathnote: "audio/Death-Note-OST.m4a",
+  harrypotter: "audio/1-Hours-Harry-Potter-ASMR.m4a",
+  strangerthings: "audio/Stranger-Things-Kids-Ambient-Soundscape-1-Hours.m4a",
+};
 
 export const IMAGES: Record<ThemeKey, string> = {
   classroom: "images/classroom-theme.jpg",
   deathnote: "images/death-note-theme3.jpg",
-  harrypotter:  "images/harry-potter-theme.jpg",
+  harrypotter: "images/harry-potter-theme.jpg",
   strangerthings: "images/stranger-things-theme.jpg",
-}
+};
 
 export const THEME_NAME: Record<ThemeKey, string> = {
   classroom: "Classroom",
   deathnote: "Death Note",
-  harrypotter:  "Harry Potter",
+  harrypotter: "Harry Potter",
   strangerthings: "Stranger Things",
-}
+};
