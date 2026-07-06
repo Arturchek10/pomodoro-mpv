@@ -8,6 +8,7 @@ export default function Stats() {
 
   return (
     <div className={styles["stats-container"]}>
+      <p>goal: </p>
       <p>sessions: {sessions}</p>
       <p>breaks: {breaks}</p>
       <p id={styles["reset-stats"]} onClick={resetStats}>

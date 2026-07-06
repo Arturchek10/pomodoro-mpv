@@ -20,6 +20,9 @@ export function usePomodoroTimer() {
   const increaseSession = useSessions((state) => state.increaseSession);
   const increaseBreak = useSessions((state) => state.increaseBreak);
 
+  const endTimerAudio = new Audio("audio/time-is-up-sound.wav")
+  endTimerAudio.volume = 0.15
+
   const startTimer = () => {
     console.log("start timer");
     setTimerStatus("running");
@@ -61,6 +64,7 @@ export function usePomodoroTimer() {
 
   // обработчик окончания сессии или перерыва
   const handleFinish = () => {
+    endTimerAudio.play().catch(console.error); // звук окончания сессии
     if (mode === "session") {
       increaseSession();
       setMode("break");

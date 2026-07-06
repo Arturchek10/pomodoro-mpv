@@ -34,10 +34,6 @@ export default function Timer() {
           delay={0}
           color="#c1c1c1"
           shineColor="#FFFFFF"
-          spread={120}
-          direction="left"
-          yoyo={false}
-          pauseOnHover={false}
           disabled={false}
         />
         <a href="https://github.com/Arturchek10" target="_blank">
@@ -46,28 +42,39 @@ export default function Timer() {
       </h1>
 
       <div className={styles["timer-container"]}>
-        <div className={styles["timer-mode"]}>
-          <div
-            className={`${styles["session-mode"]} ${mode === "session" ? styles["active"] : ""}`}
-          >
-            <p onClick={() => changeMode("session")}>sessions</p>
+        <div className={styles["modes-time-target"]}>
+          <div className={styles["set-goal-container"]}>
+            <img src="svg/goal.svg" alt="goal-icon" width={"32px"} />
           </div>
-          <div
-            className={`${styles["session-mode"]} ${mode === "break" ? styles["active"] : ""}`}
-          >
-            <p onClick={() => changeMode("break")}>breaks</p>
+          <div className={styles["timer-mode"]}>
+            <div
+              className={`${styles["session-mode"]} ${mode === "session" ? styles["active"] : ""}`}
+            >
+              <p onClick={() => changeMode("session")}>sessions</p>
+            </div>
+            <div
+              className={`${styles["session-mode"]} ${mode === "break" ? styles["active"] : ""}`}
+            >
+              <p onClick={() => changeMode("break")}>breaks</p>
+            </div>
+          </div>
+          {/* отображение таймера */}
+          <span id={styles["timer-display"]}>{timeFormating(time)}</span>
+
+          <div className={styles["goal-progress"]}>
+            <div className={styles["goal-progress-fill"]}></div>
           </div>
         </div>
-        {/* отображение таймера */}
-        <span id={styles["timer-display"]}>{timeFormating(time)}</span>
-      </div>
 
-      <Controls
-        startTimer={startTimer}
-        stopTimer={stopTimer}
-        resetTimer={resetTimer}
-        timerStatus={timerStatus}
-      />
+        <div className={styles["controls"]}>
+          <Controls
+            startTimer={startTimer}
+            stopTimer={stopTimer}
+            resetTimer={resetTimer}
+            timerStatus={timerStatus}
+          />
+        </div>
+      </div>
     </div>
   );
 }

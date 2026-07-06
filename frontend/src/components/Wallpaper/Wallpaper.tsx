@@ -6,6 +6,7 @@ import { VIDEOS, AUDIO } from "@/constants/theme.constants";
 import useThemesStore from "@/stores/useThemesStore.store";
 import useSoundStore from "@/stores/useSoundStore.store";
 
+
 export default function Wallpaper() {
   const currentThemeKey = useThemesStore((state) => state.activeTheme);
 

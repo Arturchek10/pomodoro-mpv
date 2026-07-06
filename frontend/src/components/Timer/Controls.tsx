@@ -7,7 +7,7 @@ type ControlsProps = {
   startTimer: () => void;
   stopTimer: () => void;
   resetTimer: () => void;
-  changeMode: () => void;
+  changeMode?: () => void;
   timerStatus: TimerStatus;
 };
 
@@ -30,7 +30,7 @@ export default function Controls({
         className={`${styles["btn"]} ${styles["reset"]}`}
         onClick={resetTimer}
       >
-        <FaArrowRotateLeft size={36}></FaArrowRotateLeft>
+        <img src="svg/rotate.svg" alt="rotate-icon" width={"42px"}/>
       </button>
     </div>
   );

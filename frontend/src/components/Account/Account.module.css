@@ -1,3 +1,13 @@
+.border-div{
+  background: rgba(255, 255, 255, 0.463);
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
 .account-circle {
   width: 60px;
   height: 60px;
@@ -5,7 +15,6 @@
   overflow: hidden;
   cursor: pointer;
   transition: all 0.3s;
-
 }
 
 .account-circle img {
@@ -15,6 +24,6 @@
 }
 
 .account-circle:hover{
-  scale: 1.05;
+  scale: 1.1;
   /* transition: all 1s; */
 }

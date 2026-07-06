@@ -1,4 +1,4 @@
-.timer-controls-container{
+/* .timer-controls-container{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,11 +29,25 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 200px;
-  width: 400px;
+  height: 300px;
+  width: 500px;
   margin: 10px;
+  padding: 15px;
   background: rgba(17, 1, 27, 0.4);
   border-radius: 20px;
+}
+.set-goal-container{
+  margin-left: 80%;
+  display: flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border: solid 2px rgb(162, 2, 2);
+  border-radius: 5px;
+}
+.set-goal-container p{
+  color: #ffffff;
 }
 
 .timer-mode {
@@ -46,7 +60,6 @@
 #timer-display {
   font-size: 72px;
   font-weight: 500;
-  /* color: rgb(203, 203, 203); */
   color: #ffffff;
 }
 
@@ -73,4 +86,153 @@
 .active {
   background-color: rgb(205, 61, 0, 0.6);
 }
+ */
 
+.timer-title {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  font-size: 48px;
+  color: #ffffff;
+  margin-bottom: 10px;
+  user-select: none;
+}
+
+.timer-title a {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #ffffff;
+  width: fit-content;
+}
+
+.timer-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: 350px;
+  width: 500px;
+  margin: 10px;
+  padding: 24px;
+
+  background: rgba(17, 1, 27, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  backdrop-filter: blur(3px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.modes-time-target {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.controls {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  gap: 24px;
+}
+
+.set-goal-container {
+  position: absolute;
+  top: 28px;
+  right: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 46px;
+  height: 46px;
+
+  border: 1px solid rgba(255, 94, 45, 0.65);
+  border-radius: 14px;
+
+  background: rgba(35, 10, 20, 0.45);
+  color: white;
+
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.set-goal-container:hover {
+  background: rgba(205, 61, 0, 0.35);
+  box-shadow: 0 0 18px rgba(255, 76, 31, 0.35);
+  transform: translateY(-1px);
+}
+
+.set-goal-container p {
+  color: #ffffff;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.timer-mode {
+  display: flex;
+  width: 210px;
+  justify-content: space-between;
+
+  padding: 6px;
+  margin: 10px 20px 24px 20px;
+
+  background-color: rgba(17, 1, 27, 0.65);
+  border-radius: 80px;
+}
+
+.timer-mode p {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+}
+
+.session-mode {
+  padding: 7px 16px;
+  border-radius: 80px;
+  transition: 0.3s ease;
+}
+
+.active {
+  background-color: rgba(205, 61, 0, 0.75);
+  box-shadow: 0 0 14px rgba(205, 61, 0, 0.35);
+}
+
+#timer-display {
+  font-size: 82px;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 22px;
+}
+
+
+
+
+/* goal progress */
+.goal-progress {
+  width: 360px;
+  height: 7px;
+  margin-top: 8px;
+
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.goal-progress-fill {
+  width: 35%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(205, 61, 0, 0.95),
+    rgba(255, 98, 45, 0.95)
+  );
+  border-radius: inherit;
+  box-shadow: 0 0 16px rgba(255, 76, 31, 0.45);
+}

@@ -1,4 +1,4 @@
-.controls {
+/* .controls {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,8 +19,12 @@
   background: rgba(0, 0, 0, 0.7);
 } 
 
+
 .btn:hover{
   background: rgba(0, 0, 0, 0.7);
+}
+.btn img :hover{
+  stroke: blue;
 }
 
 .start {
@@ -33,4 +37,66 @@
 .reset{
   width: 60px;
   height: 60px;
+} */
+
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  gap: 14px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(17, 1, 27, 0.45);
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+
+  color: rgba(255, 255, 255, 0.9);
+
+  cursor: pointer;
+
+  transition:
+    background-color .35s,
+    border-color .35s,
+    transform .3s,
+    box-shadow .3s;
+}
+
+.btn:hover {
+  background: rgba(205, 61, 0, 0.18);
+  border-color: rgba(255, 94, 45, .6);
+  box-shadow: 0 0 18px rgba(205, 61, 0, .25);
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: scale(.97);
+}
+
+.start {
+  /* width: 220px; */
+  width: 80%;
+  height: 64px;
+
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.start:hover {
+  background: rgba(205, 61, 0, .35);
+}
+
+.reset {
+  width: 64px;
+  height: 64px;
+  padding-bottom: 3px ;
 }

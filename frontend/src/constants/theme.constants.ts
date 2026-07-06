@@ -20,6 +20,10 @@ export const AUDIO: Record<ThemeKey, string> = {
   strangerthings: "audio/Stranger-Things-Kids-Ambient-Soundscape-1-Hours.m4a",
 };
 
+// export const BREAK_AUDIO = {
+//   timeIsUp: "audio/time-is-up-sound.wav"
+// }
+
 export const IMAGES: Record<ThemeKey, string> = {
   classroom: "images/classroom-theme.jpg",
   deathnote: "images/death-note-theme3.jpg",
