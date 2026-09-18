@@ -81,3 +81,18 @@
   font-size: 15px;
 }
 
+.name-card-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.goal-progress {
+  width: 50px;
+  height: 3px;
+
+  background: rgb(253, 76, 0);
+  border-radius: 999px;
+  overflow: hidden;
+}

@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "./Card.module.css";
+import styles from "./ThemeCard.module.css";
 import useThemeStore from "@/stores/useThemesStore.store";
 import { ThemeId } from "@/constants/theme.constants";
 
@@ -47,7 +47,10 @@ export default function ThemeCard({ imageSrc, themeName, themeId }: Props) {
         >
           select
         </p>
-        <p className={styles["theme-name"]}>{themeName}</p>
+        <div className={styles["name-card-div"]}>
+          <p className={styles["theme-name"]}>{themeName}</p>
+          <div className={styles["goal-progress"]}></div>
+        </div>
       </div>
     </div>
   );

@@ -5,10 +5,10 @@ type AccountProps = {
   onClick: () => void
 }
 
-export default function Account({onClick}: AccountProps) {
+export default function Account() {
   return (
     <Tooltip title="имя пользователя">
-      <div className={styles["border-div"]} onClick={onClick}>
+      <div className={styles["border-div"]}>
         <div className={styles["account-circle"]}>
           <img src="/images/account-img.jpg" alt="image" />
         </div>

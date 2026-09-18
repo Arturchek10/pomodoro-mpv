@@ -8,7 +8,7 @@
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "node", // изначально было bundler
+    "moduleResolution": "bundler", // изначально было bundler
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
@@ -19,7 +19,7 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
     }
   },
   "include": [
