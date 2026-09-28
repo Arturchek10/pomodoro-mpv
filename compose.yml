@@ -1,0 +1,22 @@
+services:
+  postgres:
+    image: postgres:16-bookworm #образ программы 
+    platform: linux/amd64
+    # container_name: postgres #контейнер (запущенный экземпляр образа)
+
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: pomodoro3.0
+
+    ports:
+      - "5432:5432"  # порт postgresql внутри контейнера работает на порту 5432. 
+      #Чтобы подключаться к нему с windows, порт контейнера связывается с портом  компьютера
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data # файл где будет хранится вся инфа образа (volumes)
+
+    restart: unless-stopped # перезапуск только если не остановили сами.
+
+volumes:
+  postgres_data:

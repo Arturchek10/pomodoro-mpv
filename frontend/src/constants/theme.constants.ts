@@ -3,7 +3,8 @@ export const THEMES = [
   "deathnote",
   "harrypotter",
   "strangerthings",
-  "haikuii"
+  "haikuii",
+  "forest"
 ] as const;
 export type ThemeKey = (typeof THEMES)[number]; // тип любого элемента массива
 
@@ -12,7 +13,8 @@ export const VIDEOS: Record<ThemeKey, string> = {
   deathnote: "/videos/Death-Note-wallpaper+.mp4",
   harrypotter: "/videos/Harry-Potter-wallpaper+.mp4",
   strangerthings: "/videos/Stranger-Things-wallpaper+.mp4",
-  haikuii: ""
+  haikuii: "",
+  forest: "/videos/nature-wallpaper+.mp4"
 };
 
 export const AUDIO: Record<ThemeKey, string> = {
@@ -20,7 +22,8 @@ export const AUDIO: Record<ThemeKey, string> = {
   deathnote: "/audio/Death-Note-OST.m4a",
   harrypotter: "/audio/1-Hours-Harry-Potter-ASMR.m4a",
   strangerthings: "/audio/Stranger-Things-Kids-Ambient-Soundscape-1-Hours.m4a",
-  haikuii: ""
+  haikuii: "",
+  forest: "",
 };
 
 // export const BREAK_AUDIO = {
@@ -32,7 +35,9 @@ export const IMAGES: Record<ThemeKey, string> = {
   deathnote: "/images/death-note-theme3.jpg",
   harrypotter: "/images/harry-potter-theme.jpg",
   strangerthings: "/images/stranger-things-theme.jpg",
-  haikuii: "/images/haikuii-theme.jpg"
+  haikuii: "/images/haikuii-theme.jpg",
+  forest: "",
+
 };
 
 export const THEME_NAME: Record<ThemeKey, string> = {
@@ -40,5 +45,6 @@ export const THEME_NAME: Record<ThemeKey, string> = {
   deathnote: "Death Note",
   harrypotter: "Harry Potter",
   strangerthings: "Stranger Things",
-  haikuii: ""
+  haikuii: "",
+  forest: "Forest with Lake",
 };
