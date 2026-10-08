@@ -3,7 +3,7 @@
   width: 100%;
   height: 80px;
   align-items: center;
-  padding: 3em 2em 0 1em;
+  padding: 2em 2em 0 1em;
 }
 
 .stats-account-div {
@@ -16,3 +16,14 @@
 .auth-modal-container {
   z-index: 100;
 }
+
+
+.acc-container{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 1em;
+  height: fit-content;
+}
+
+

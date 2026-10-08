@@ -5,7 +5,6 @@ import { IMAGES, THEME_NAME, THEMES } from "@/constants/theme.constants";
 export default function ThemesCatalog() {
   return (
     <div>
-      <h1>themes</h1>
       {/* сетка с карточками, на которые можно нажимать и они будут анимироваться 
       + описание сюжета карточки*/}
       <div className={styles["cards-grid"]}>
