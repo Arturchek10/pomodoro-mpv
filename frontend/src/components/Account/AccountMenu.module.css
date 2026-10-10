@@ -4,10 +4,11 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
+  cursor: pointer;
 }
 
 .border-div {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0);
   width: 60px;
   height: 60px;
   display: flex;
@@ -34,7 +35,7 @@
 }
 
 .border-div:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.15  );
 }
 
 .svg-acc-container {
@@ -50,7 +51,7 @@
 }
 
 .svg-acc-container:hover {
-  background-color: rgba(207, 207, 207, 0.419);
+  background-color: rgba(207, 207, 207, 0.15);
 }
 
 .profile {

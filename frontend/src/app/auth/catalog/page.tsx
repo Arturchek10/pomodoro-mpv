@@ -1,10 +1,13 @@
 import styles from "./ThemesCatalog.module.css";
 import CatalogCard from "@/components/ui/CatalogCard/CatalogCard"; // должно быть так "@/components/ui/Card/Card"
+import { SideDashboard } from "@/components/SideDashboard/SideDashboard";
 import { IMAGES, THEME_NAME, THEMES } from "@/constants/theme.constants";
 
 export default function ThemesCatalog() {
   return (
     <div>
+        {/* боковой dashboard */}
+        <SideDashboard />
       {/* сетка с карточками, на которые можно нажимать и они будут анимироваться 
       + описание сюжета карточки*/}
       <div className={styles["cards-grid"]}>
