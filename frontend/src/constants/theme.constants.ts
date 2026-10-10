@@ -4,7 +4,6 @@ export const THEMES = [
   "harrypotter",
   "strangerthings",
   "haikuii",
-  "forest"
 ] as const;
 export type ThemeKey = (typeof THEMES)[number]; // тип любого элемента массива
 
@@ -14,7 +13,6 @@ export const VIDEOS: Record<ThemeKey, string> = {
   harrypotter: "/videos/Harry-Potter-wallpaper+.mp4",
   strangerthings: "/videos/Stranger-Things-wallpaper+.mp4",
   haikuii: "",
-  forest: "/videos/nature-wallpaper+.mp4"
 };
 
 export const AUDIO: Record<ThemeKey, string> = {
@@ -23,7 +21,6 @@ export const AUDIO: Record<ThemeKey, string> = {
   harrypotter: "/audio/1-Hours-Harry-Potter-ASMR.m4a",
   strangerthings: "/audio/Stranger-Things-Kids-Ambient-Soundscape-1-Hours.m4a",
   haikuii: "",
-  forest: "",
 };
 
 // export const BREAK_AUDIO = {
@@ -36,8 +33,6 @@ export const IMAGES: Record<ThemeKey, string> = {
   harrypotter: "/images/harry-potter-theme.jpg",
   strangerthings: "/images/stranger-things-theme.jpg",
   haikuii: "/images/haikuii-theme.jpg",
-  forest: "",
-
 };
 
 export const THEME_NAME: Record<ThemeKey, string> = {
@@ -46,5 +41,4 @@ export const THEME_NAME: Record<ThemeKey, string> = {
   harrypotter: "Harry Potter",
   strangerthings: "Stranger Things",
   haikuii: "",
-  forest: "Forest with Lake",
 };

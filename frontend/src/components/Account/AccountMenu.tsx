@@ -14,7 +14,7 @@ export default function AccountMenu() {
     },
   };
 
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className={styles["account-menu-container"]}>
@@ -26,10 +26,7 @@ export default function AccountMenu() {
         </div>
       </Tooltip>
 
-      <div
-        className={styles["account-dropdpown-container"]}
-        
-      >
+      <div className={styles["account-dropdpown-container"]}>
         <Tooltip slotProps={darkTooltip} title="accounts">
           <div className={styles["svg-acc-container"]}>
             <img

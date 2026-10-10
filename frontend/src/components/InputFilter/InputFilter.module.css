@@ -1,0 +1,72 @@
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 190px;
+}
+
+.filter-container label {
+  color: #8e8e99;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  padding: 12px 14px;
+
+  background: #1d1d23;
+  color: white;
+  border: 1px solid #303038;
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+.trigger > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  min-width: var(--radix-select-trigger-width);
+  max-height: var(--radix-select-content-available-height);
+  overflow: hidden;
+
+  background: #24242c;
+  border: 1px solid #383842;
+  border-radius: 10px;
+  padding: 5px;
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+
+.item {
+  padding: 10px 12px;
+  border-radius: 6px;
+  color: #e5e5e5;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+}
+
+.item[data-highlighted] {
+  background: #393047;
+  color: #c4b5fd;
+}
+
+.item[data-state="checked"] {
+  color: #a78bfa;
+}
+
+
+.arr-btm-svg{
+  width: 16px;
+  height: 16px;
+}
