@@ -13,7 +13,7 @@ export default function ThemeCarousel() {
     <div className={styles["main"]}>
       <ThemesCatalogBtn onClick={() => router.push("/auth/catalog")} />
       <div className={styles["carousel-container"]}>
-        {THEMES.map((theme) => (
+        {THEMES.slice(0,4).map((theme) => (
           <ThemeCard
             key={theme}
             themeId={theme}

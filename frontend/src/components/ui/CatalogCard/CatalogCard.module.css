@@ -11,12 +11,19 @@
   border-radius: 10px;
 }
 
+.card-container:hover img{
+  transform: translateZ(0) scale(1.015);
+}
+
 .theme-img {
   object-fit: cover;
   height: 100%;
   width: 100%;
   opacity: 1;
   transition: 0.5s;
+
+  transition: transform 0.3s ease;
+
 }
 
 

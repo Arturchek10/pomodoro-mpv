@@ -2,7 +2,7 @@
 
 import styles from "./AccountMenu.module.css";
 import Tooltip from "@mui/material/Tooltip";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 export default function AccountMenu() {
   const darkTooltip = {
@@ -16,8 +16,23 @@ export default function AccountMenu() {
 
   const [isOpen, setIsOpen] = useState(false);
 
+  const menuRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    console.log("isOpen", isOpen);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className={styles["account-menu-container"]}>
+    <div ref={menuRef} className={styles["account-menu-container"]}>
       <Tooltip slotProps={darkTooltip} title="имя пользователя">
         <div className={styles["border-div"]}>
           <div className={styles["account-circle"]}>
@@ -28,13 +43,25 @@ export default function AccountMenu() {
 
       <div className={styles["account-dropdpown-container"]}>
         <Tooltip slotProps={darkTooltip} title="accounts">
-          <div className={styles["svg-acc-container"]}>
-            <img
+          <div
+            className={`${styles["svg-acc-container"]} ${isOpen ? styles["active"] : ""}`}
+            onClick={() => setIsOpen((prev) => !prev)}
+          >
+            {/* <img
               className={styles["svg-accounts"]}
               src="/svg/arrow-bottom.svg"
               alt="accounts"
-              onClick={() => setIsOpen((prev) => !prev)}
-            />
+            /> */}
+
+            <svg
+              className={styles["svg-accounts"]}
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+            >
+              <path fill="currentColor" d="M23.7 8.7 12 20.42.3 8.71l1.4-1.42L12 17.6 22.3 7.3z" />
+            </svg>
           </div>
         </Tooltip>
         {isOpen && (

@@ -48,10 +48,11 @@
   background-color: #303038;
 }
 
-.sidebar > p:first-child {
+.sidebar > a:first-child {
   margin: 10px;
   font-weight: 600;
   margin-bottom: 25px;
+  cursor: pointer;
 }
 
 .header-container {

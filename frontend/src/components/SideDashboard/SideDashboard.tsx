@@ -4,7 +4,7 @@ import styles from "./SideDashboard.module.css"
 export function SideDashboard() {
   return (
     <aside className={styles.sidebar}>
-      <p>PomodoroTimer</p>
+      <Link href="/">PomodoroTimer</Link>
       <div className={styles["header-container"]}>
         <p>Active Timer</p>
         <p>24:00</p>
