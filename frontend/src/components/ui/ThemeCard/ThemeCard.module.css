@@ -11,6 +11,7 @@
 }
 .card-container:hover {
   flex-grow: 3;
+  transition-delay: 0.15s;
 }
 .card-container:hover .text-container{
   opacity: 1;

@@ -18,12 +18,12 @@ export const VIDEOS: Record<ThemeKey, string> = {
 };
 
 export const AUDIO: Record<ThemeKey, string> = {
-  classroom: "/audio/Study-With-Me-in-Class.m4a",
-  deathnote: "/audio/Death-Note-OST.m4a",
-  harrypotter: "/audio/1-Hours-Harry-Potter-ASMR.m4a",
-  strangerthings: "/audio/Stranger-Things-Kids-Ambient-Soundscape-1-Hours.m4a",
+  classroom: "/audio/10min-Classroom-audio.m4a",
+  deathnote: "/audio/10min-Death-Note-audio.m4a",
+  harrypotter: "/audio/10min-Harry-Potter-audio.m4a",
+  strangerthings: "/audio/10min-stranger-things-audio.m4a",
   haikuii: "",
-  lotr: "lotr-sound-10min.mp3",
+  lotr: "/audio/lotr-sound-10min.mp3",
 };
 
 // export const BREAK_AUDIO = {

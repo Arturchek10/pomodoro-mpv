@@ -3,6 +3,8 @@
 import styles from "./AccountMenu.module.css";
 import Tooltip from "@mui/material/Tooltip";
 import { useState, useRef, useEffect } from "react";
+import Link from "next/link";
+
 
 export default function AccountMenu() {
   const darkTooltip = {
@@ -35,9 +37,11 @@ export default function AccountMenu() {
     <div ref={menuRef} className={styles["account-menu-container"]}>
       <Tooltip slotProps={darkTooltip} title="имя пользователя">
         <div className={styles["border-div"]}>
+          <Link href="/auth/profile">
           <div className={styles["account-circle"]}>
             <img src="/images/account-img.jpg" alt="image" />
           </div>
+          </Link>
         </div>
       </Tooltip>
 
