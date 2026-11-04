@@ -2,6 +2,7 @@
 import styles from "./AuthForm.module.css";
 import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
+import { useState } from "react";
 
 type AuthFormProps = {
   type: "login" | "register";
@@ -10,20 +11,42 @@ type AuthFormProps = {
 export default function AuthForm({ type }: AuthFormProps) {
   const isRegister = type === "register";
 
-  // async function handleRegister() {
-  //   const { data, error } = await authClient.signUp.email({
-  //     email: "test@test.com",
-  //     password: "password",
-  //     name: "Artur",
-  //   });
+  const [login, setLogin] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
-  //   if (error) {
-  //     console.error(error);
-  //     return;
-  //   }
+  // SIGN UP
+  async function handleRegister() {
+    const { data, error } = await authClient.signUp.email({
+      email: login,
+      password: password,
+      name: login, // потом отрубить name или добавить поле
+      callbackURL: "/",
+    });
 
-  //   console.log(data);
-  // }
+    if (error) {
+      console.error("sign up ", error);
+      return;
+    }
+
+    console.log(data);
+  }
+
+  // SIGN IN
+  async function handleAuth() {
+    const { data, error } = await authClient.signIn.email({
+      email: login,
+      password: password,
+      callbackURL: "/",
+    });
+
+    if (error) {
+      console.error("sign in error: ", error);
+      return;
+    }
+
+    console.log(data);
+  }
 
   return (
     <div className={styles["main-reg-div"]}>
@@ -59,12 +82,30 @@ export default function AuthForm({ type }: AuthFormProps) {
           <p className={styles["title"]}>
             {isRegister ? "Create an account" : "Log in to your account"}
           </p>
-          <input type="email" placeholder="Enter your email" />
-          <input type="password" placeholder="Password" />
+          <input
+            type="email"
+            placeholder="Enter your email"
+            value={login}
+            onChange={(e) => setLogin(e.target.value)}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
           {isRegister && (
-            <input type="password" placeholder="Confirm password" />
+            <input
+              type="password"
+              placeholder="Confirm password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
           )}
-          <button className={styles["reg-btn"]}>
+          <button
+            className={styles["reg-btn"]}
+            onClick={isRegister ? handleRegister : handleAuth}
+          >
             {isRegister ? "Create an account" : "Log in"}
           </button>
           <p>or</p>

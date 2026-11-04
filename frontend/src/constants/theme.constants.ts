@@ -4,7 +4,7 @@ export const THEMES = [
   "harrypotter",
   "strangerthings",
   "haikuii",
-  "lotr"
+  "lotr",
 ] as const;
 export type ThemeKey = (typeof THEMES)[number]; // тип любого элемента массива
 
@@ -26,17 +26,13 @@ export const AUDIO: Record<ThemeKey, string> = {
   lotr: "/audio/lotr-sound-10min.mp3",
 };
 
-// export const BREAK_AUDIO = {
-//   timeIsUp: "audio/time-is-up-sound.wav"
-// }
-
 export const IMAGES: Record<ThemeKey, string> = {
   classroom: "/images/classroom-theme.jpg",
   deathnote: "/images/death-note-theme3.jpg",
   harrypotter: "/images/harry-potter-theme.jpg",
   strangerthings: "/images/stranger-things-theme.jpg",
   haikuii: "/images/haikuii-theme.jpg",
-  lotr: "/images/lotr-theme.jpg"
+  lotr: "/images/lotr-theme.jpg",
 };
 
 export const THEME_NAME: Record<ThemeKey, string> = {
@@ -44,6 +40,25 @@ export const THEME_NAME: Record<ThemeKey, string> = {
   deathnote: "Death Note",
   harrypotter: "Harry Potter",
   strangerthings: "Stranger Things",
-  haikuii: "",
-  lotr: "Lord of the Ring"
+  haikuii: "Haikuii",
+  lotr: "Lord of the Ring",
+};
+
+
+export type ThemeCategory = "real" | "anime" | "movies" | "series" | "fantasy";
+
+export type ThemeTag = "sport" | "school" | "epic" | "nature" | "chill" | "rain";
+
+type ThemeFilters = {
+  category: ThemeCategory,
+  tags: ThemeTag[]
+}
+
+export const THEME_FILTERS: Record<ThemeKey, ThemeFilters> = {
+  classroom: {category: "real", tags: ["school", "chill"] },
+  deathnote: {category: "anime", tags: ["chill"]},
+  harrypotter: {category: "movies", tags: ["school", "chill"]},
+  strangerthings: {category: "series", tags: []},
+  haikuii: {category: "anime", tags: ["school", "sport"]},
+  lotr: {category: "movies", tags: ["epic"]}
 };

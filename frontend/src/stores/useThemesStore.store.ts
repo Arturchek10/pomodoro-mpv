@@ -6,7 +6,7 @@ type ThemeState = {
 };
 
 const useThemeStore = create<ThemeState>((set) => ({
-  activeTheme: "deathnote",
+  activeTheme: "classroom",
   setActiveTheme: (theme) => set({ activeTheme: theme }),
 }));
 

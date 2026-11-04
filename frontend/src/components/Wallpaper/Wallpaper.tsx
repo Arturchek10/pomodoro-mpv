@@ -102,6 +102,7 @@ export default function Wallpaper() {
         muted
         loop
         playsInline
+        poster="/images/classroom-poster.png"
       />
 
       <video
