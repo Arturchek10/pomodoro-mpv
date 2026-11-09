@@ -20,8 +20,17 @@ export function usePomodoroTimer() {
   const increaseSession = useSessions((state) => state.increaseSession);
   const increaseBreak = useSessions((state) => state.increaseBreak);
 
-  const endTimerAudio = new Audio("audio/time-is-up-sound.wav")
-  endTimerAudio.volume = 0.15
+  const endTimerAudio = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    endTimerAudio.current = new Audio("/audio/time-is-up-sound.wav");
+    endTimerAudio.current.volume = 0.15;
+
+    return () => {
+      endTimerAudio.current?.pause();
+      endTimerAudio.current = null;
+    };
+  }, []);
 
   const startTimer = () => {
     console.log("start timer");
@@ -64,7 +73,7 @@ export function usePomodoroTimer() {
 
   // обработчик окончания сессии или перерыва
   const handleFinish = () => {
-    endTimerAudio.play().catch(console.error); // звук окончания сессии
+    endTimerAudio.current?.play().catch(console.error); // звук окончания сессии
     if (mode === "session") {
       increaseSession();
       setMode("break");

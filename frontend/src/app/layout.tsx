@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "intro.js/introjs.css";
 import Wallpaper from "@/components/Wallpaper/Wallpaper";
 import OnboardingTour from "@/components/OnboardingTour/OnboardingTour";
 

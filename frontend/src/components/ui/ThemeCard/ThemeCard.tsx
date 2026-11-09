@@ -2,12 +2,12 @@
 
 import styles from "./ThemeCard.module.css";
 import useThemeStore from "@/stores/useThemesStore.store";
-import { ThemeId } from "@/constants/theme.constants";
+import type { ThemeKey } from "@/constants/theme.constants";
 
 type Props = {
   imageSrc: string;
   themeName: string;
-  themeId: ThemeId;
+  themeId: ThemeKey;
 };
 
 export default function ThemeCard({ imageSrc, themeName, themeId }: Props) {
