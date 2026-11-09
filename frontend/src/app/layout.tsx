@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Wallpaper from "@/components/Wallpaper/Wallpaper";
-
+import OnboardingTour from "@/components/OnboardingTour/OnboardingTour";
 
 export const metadata: Metadata = {
   title: "Pomodoro",
@@ -16,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <OnboardingTour />
         <Wallpaper />
         {/* <Header/> */}
         {children}

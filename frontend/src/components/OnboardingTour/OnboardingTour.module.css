@@ -1,0 +1,92 @@
+.tooltip {
+  background: #171923 !important;
+  color: #f4f4f5 !important;
+  border: 1px solid #4f63d9 !important;
+  border-radius: 14px !important;
+  padding: 8px !important;
+  min-width: 290px !important;
+  max-width: 340px !important;
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.45),
+    0 0 20px rgba(79, 99, 217, 0.12) !important;
+}
+
+/* Текст подсказки */
+.tooltip :global(.introjs-tooltiptext) {
+  color: #d1d5db !important;
+  font-size: 14px !important;
+  line-height: 1.65 !important;
+  padding: 14px 14px 18px !important;
+}
+
+/* Нижняя панель */
+.tooltip :global(.introjs-tooltipbuttons) {
+  border-top: 1px solid #303445 !important;
+  padding: 12px 10px 6px !important;
+}
+
+/* Общий стиль кнопок */
+.tooltip :global(.introjs-button) {
+  background: #252a3a !important;
+  color: #d1d5db !important;
+  border: 1px solid #3b4258 !important;
+  border-radius: 8px !important;
+  padding: 7px 14px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  transition: all 0.2s ease !important;
+}
+
+/* Наведение */
+.tooltip :global(.introjs-button:hover) {
+  background: #343b52 !important;
+  color: #ffffff !important;
+}
+
+/* Основная кнопка */
+.tooltip :global(.introjs-nextbutton),
+.tooltip :global(.introjs-donebutton) {
+  background: #4f63d9 !important;
+  border-color: #4f63d9 !important;
+  color: #ffffff !important;
+}
+
+/* Наведение основной кнопки */
+.tooltip :global(.introjs-nextbutton:hover),
+.tooltip :global(.introjs-donebutton:hover) {
+  background: #6378f0 !important;
+  border-color: #6378f0 !important;
+}
+
+/* Кнопка закрытия */
+.tooltip :global(.introjs-skipbutton) {
+  color: #9298aa !important;
+  font-size: 20px !important;
+}
+
+/* Прогресс */
+.tooltip :global(.introjs-progress) {
+  background: #303445 !important;
+  height: 4px !important;
+  border-radius: 10px !important;
+  margin: 0 14px 12px !important;
+}
+
+.tooltip :global(.introjs-progressbar) {
+  background: #6378f0 !important;
+  border-radius: 10px !important;
+}
+
+/* Стрелка */
+.tooltip :global(.introjs-arrow) {
+  display: none !important;
+}
+
+/* Выделение элемента */
+:global(.introjs-helperLayer) {
+  border: 1px solid #6378f0 !important;
+  border-radius: 9px !important;
+  box-shadow: 0 0 15px rgba(99, 120, 240, 0.2) !important;
+}
